@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html>
+  <html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="icon" type="image/x-icon" href="./JS logo finalised.png">
+  <link href= "./shopping basket.css" rel="stylesheet" type="text/css">
+<head>
+  <title>Jarnt Suites | Room Booking</title>
+</head>
+<body>
+  <div class="container">
+    <h1>Form Data:</h1>
+
+    <div id="form-data" method="post"></div>
+  </div>
+  <br>
+  <div class="PrevNext">
+    <a href="./1.html">&#8249; Previous</a>
+    <a href="./shopping basket.html">Next &#8250;</a>
+  </div>
+  <script>
+    // Function to get URL parameters by name
+    function getParameterByName(name, url) {
+      if (!url) url = window.location.href;
+      name = name.replace(/[\[\]]/g, '\\$&');
+      var regex = new RegExp('[?&]' + name + '(=([^&#]*)|&|#|$)'),
+          results = regex.exec(url);
+      if (!results) return null;
+      if (!results[2]) return '';
+      return decodeURIComponent(results[2].replace(/\+/g, ' '));
+    }
+
+    // Get URL parameters and display them on the page
+    const formDataDiv = document.getElementById('form-data');
+    formDataDiv.innerHTML = `
+      <p>First Name: ${getParameterByName('firstname')}</p>
+      <p>Last Name: ${getParameterByName('lastname')}</p>
+      <p>Phone number: ${getParameterByName('Pnumber')}</p>
+      <p>Email address: ${getParameterByName('email')}</p>
+      <p>Address: ${getParameterByName('address')}</p>
+      <p>Country: ${getParameterByName('selectedCountry')}</p>
+      <p>City: ${getParameterByName('city')}</p>
+      <p>State: ${getParameterByName('state')}</p>
+      <p>Zip: ${getParameterByName('zip')}</p>
+      <p>Total Pax: ${parseInt(getParameterByName('adults')) + parseInt(getParameterByName('children'))}</p>
+      <p>Arrival Date: ${getParameterByName('arrivalDate')}</p>
+      <p>Departure Date: ${getParameterByName('departureDate')}</p>
+      <p>Card Name: ${getParameterByName('cardname')}</p>
+      <p>Card Number: ${getParameterByName('cardnumber')}</p>
+      <p>Expiry Month: ${getParameterByName('expmonth')}</p>
+      <p>Expiry Year: ${getParameterByName('expyear')}</p>
+      <p>CVV: ${getParameterByName('cvv')}</p>
+      <p>Special Requests: ${getParameterByName('req')}</p>
+    `;
+  </script>
+
+</body>
+</html>
+
+<style>
+.PrevNext{
+font-size: 17px;
+padding-left: 40%;
+}
+.PrevNext a, .PrevNext a:visited{
+background-color:rgb(53, 145, 160);
+box-shadow: 1px 1px #006969;
+border-radius: 4px;
+color: #ffffff;
+padding: 8px;
+margin: 16px;
+text-decoration: none;
+
+}
+.PrevNext a:hover{
+background-color: #004949;
+box-shadow: 1px 1px #004949;
+}
+body {
+background-color: rgb(228, 228, 228);
+color: #000000;
+font-family: Marcellus;
+border: #000000;
+}
+.container {
+  background-color:#d8cfc4;
+  padding: 5px 20px 15px 20px;
+  border: 2px solid rgb(0, 0, 0);
+  border-radius: 3px;
+  text-align: center;
+}
+.container.div{
+    font-size: larger;
+}
+</style>

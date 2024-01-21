@@ -1,0 +1,650 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css%22%3E">
+        <title>Jarnt Suites | Rooms</title>
+        <link rel="icon" type="image/x-icon" href="./JS logo finalised.png">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+        <link href="https://fonts.googleapis.com/css2?family=Marcellus&family=Poppins&display=swap" rel="stylesheet">
+        <link rel="preconnect" href="https://fonts.googleapis.com%22%3E/">
+    </head>
+<style>
+header {
+  margin:0;
+  font-family:Poppins;
+}
+.navigationbar{
+  border:1px solid rgb(31, 78, 85);
+  background-color: rgb(37, 94, 101);
+  padding-block:1%;
+  top:0px;
+  z-index: 100;
+  position:fixed;
+  min-width:100%;
+  animation-name: slide;
+  animation-duration:1s;
+}
+
+@keyframes slide {
+  from {transform:translatey(-120px);}
+  to {transform:translatey(0px);}
+}
+
+@keyframes slideup {
+  from {transform:translatey(0px);}
+  to {transform:translatey(-120px);}
+}
+
+.navigationbar ul li{
+  display:inline;
+  position: relative;
+  padding-left:50px;
+}
+
+.navigationbar ul li a{
+  color:white;
+  text-decoration:none;
+  text-align:right;
+  font-weight:300;
+  display:inline-block;
+  padding-top: 10px;
+}
+
+.navigationbar ul li a::after{
+  display:block;
+  content:"";
+  width:100%;
+  height:2px;
+  background-color:rgb(255, 255, 255);
+  transform: scalex(0);
+  transition: 0.6s;
+}
+
+.navigationbar ul li a:hover::after{
+  transform:scalex(1)
+}
+
+#reserve {
+  background-color:rgb(53, 145, 160);
+  padding-left:15px;
+  padding-right: 15px;
+  padding-top: 10px;
+  padding-bottom: 15px;
+  color:#F9F6F0;
+  text-decoration:none;
+  float:right;
+  margin-right:40px;
+}
+
+body {
+  font-family: Marcellus;
+  margin: 0;
+  background-color: #E9E6E1;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+img {
+  vertical-align: middle;
+  max-width: 100%;
+}
+
+/* Position the image container (needed to position the left and right arrows) */
+.container {
+  position: relative;
+  max-width: 100%;
+  border: 3px solid rgb(0, 0, 0);
+  background-color: rgb(255, 255, 255);
+  position: sticky;
+}
+.parent{
+    display:flex;
+    padding-bottom: 30px;
+}
+/* Hide the images by default */
+.mySlides {
+  display: none;
+}
+
+/* Add a pointer when hovering over the thumbnail images */
+.cursor {
+  cursor: pointer;
+}
+
+/* Next & previous buttons */
+.prev,
+.next {
+  cursor: pointer;
+  position: absolute;
+  top: 40%;
+  width: auto;
+  padding: 16px;
+  margin-top: -50px;
+  color: rgb(255, 255, 255);
+  font-weight: bold;
+  font-size: 20px;
+  border-radius: 0 3px 3px 0;
+  user-select: none;
+  -webkit-user-select: none;
+}
+
+/* Position the "next button" to the right */
+.next {
+  right: 0;
+  border-radius: 3px 0 0 3px;
+}
+
+/* On hover, add a black background color with a little bit see-through */
+.prev:hover,
+.next:hover {
+  background-color: rgba(0, 0, 0, 0.8);
+}
+
+/* Number text (1/3 etc) */
+.numbertext {
+  color: rgb(49, 46, 18);
+  font-size: 12px;
+  padding: 8px 12px;
+  position: absolute;
+  top: 0;
+}
+/* Container for image text */
+.caption-container {
+  text-align: center;
+  background-color: #222;
+  padding: 2px 16px;
+
+}
+.container2 {
+  width: 500px;
+  height: 591px;
+  padding-top: 50px;
+  padding-bottom: 50px;
+  padding-left: 30px;
+  padding-right: 30px;
+  border: 3px solid rgb(0, 0, 0);
+  margin: 0;
+  text-align: center;
+  font-size: large;
+  background-color: #d8cfc4; 
+  font-family: Marcellus;
+  font-weight: 200;
+}
+
+.container1 {
+  width: 500px;
+  padding: 10px;
+  border: 3px solid rgb(0, 0, 0);
+  margin: 0;
+  background-color: #d8cfc4; 
+}
+.container3{
+  border:1px solid rgb(0, 0, 0) ;
+  margin-bottom: 10px;
+  margin-top: 10px;
+  text-align: center;
+  background-color:#d8cfc4;
+  color: rgb(118, 102, 12);
+  font-size: medium;
+  padding-top: 30px;
+  padding-bottom: 30px;
+}
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+/* Six columns side by side */
+.column {
+  float: left;
+  width: 33%;
+}
+
+/* Add a transparency effect for thumnbail images */
+.demo {
+  opacity: 0.6;
+}
+
+.active,
+.demo:hover {
+  opacity: 1;
+}
+
+ul.breadcrumb {
+  margin-top: 100px;
+  padding: 10px 8px;
+  list-style: none;
+  border:1px solid rgb(31, 78, 85);
+  background-color:#d8cfc4;
+}
+ul.breadcrumb li {
+  display: inline;
+  font-size: 18px;
+}
+ul.breadcrumb li+li:before {
+  padding: 8px;
+  color: rgb(118, 102, 12);
+  content: "/\00a0";
+}
+ul.breadcrumb li a {
+  color: #0275d8;
+  text-decoration: none;
+}
+ul.breadcrumb li a:hover {
+  color: #01447e;
+  text-decoration: underline;
+}
+#checkin{
+  width: 10%;
+  padding: 12px;
+}
+#checkout{
+  width: 10%;
+  padding: 12px;
+}
+#available{
+  width: 10%; 
+  padding: 8px; 
+  background-color:rgb(53, 145, 160) ;
+}
+/* mobile navigation bar */
+.mobile {
+  position:fixed;
+  background-color:#308d99;
+  height:100%;
+  width:40%;
+  opacity:0;
+  z-index:1000;
+  display:none;
+  margin-top:0px;
+
+  
+  animation-name:left_slide;
+  animation-duration:0.8s;
+}
+.mobile ul li a{
+  color:white;
+  text-decoration:none;
+  text-align:right;
+  font-weight:300;
+  display:inline-block;
+  position:relative;
+  padding-top: 15px;
+}
+.mobile ul {
+  list-style:none;
+  margin-top:20%;
+}
+.mobile ul li{
+  position: relative;
+  margin-left:20%;
+  margin-top:5%;
+}
+@keyframes left_slide {
+  from {transform:translatex(-400px)};
+  to {transform:translatex(0px)};
+}
+.icon {
+  position:absolute;
+  float:right;
+  right:7%;
+  color:white;
+}
+#icon {
+  display:none;
+  font-size:28px;
+}
+#close {
+  font-size:30px;
+  background-color:#308d99;
+  border:none;
+  color:white;
+}
+@media screen and (max-width: 1000px) {
+  .navigationbar {
+      width:100%;
+  }
+  .mobile {
+      opacity:1;
+      width:30%;
+      bottom:1px;
+  }
+  .navigationbar ul li a{
+      position:absolute;
+      display:none;
+  }
+  #icon {
+      display:block;
+      margin-top:15px;
+  }
+  #reserve {
+      float:left;
+      position:relative;
+      right:5%;
+      bottom:25px;
+  }
+}
+@media screen and (max-width: 800px) {
+  .mobile {
+    width:40%;
+  }
+}
+#close {
+    font-size:30px;
+    background-color:#308d99;
+    border:none;
+    color:white;
+}
+footer {
+    background-color: rgb(37, 94, 101);
+    color: rgb(255, 255, 255);
+    padding: 1%;
+}
+
+footer h2 {
+    font-size: 150%;
+    letter-spacing: 3px;
+}
+
+footer div {
+    display: inline-block;
+    height: 130px;
+    padding-top: 2%;
+    padding-right: 2%;
+    margin-top: -10px;
+}
+footer ul {
+  list-style:none;
+}
+@media screen and (max-width: 600px) {
+    .navigationbar ul li a{
+        position:absolute;
+        display:none;
+    }
+    #icon {
+        display:block;
+        margin-top:10px;
+    }
+    #reserve {
+        float:left;
+
+    }
+    .mobile {
+      opacity:1;
+    }
+}
+@media screen and (max-width: 600px) {
+  .parent{
+    flex-direction: column;
+    width: 100%;
+  }
+  .container1{
+    width: 100%;
+  }
+  .container2{
+    width: 100%;
+  }
+  .container3 {
+    display: flex;
+    flex-direction: column;
+  }
+
+  /* Optional: You can add spacing between elements */
+  .container3 form > * {
+    margin-bottom: 10px;
+  }
+
+  #checkin{
+  width: 50%;
+  margin-right: 100px;
+  }
+  #checkout{
+  width: 50%;
+  margin-right: 100px;
+  }
+  #available{
+  width: 10%; 
+  }
+  ul.breadcrumb {
+  margin-top: 90px;
+  }
+}
+@media screen and (max-width: 620px) {
+    footer {
+        text-align: center;
+        height:350px;
+    }
+
+    footer div {
+        font-size: 80%;
+        display: block;
+        height: 20%;
+    }
+}
+</style>
+
+<header>
+  <section class="navigationbar" id="myTopnav">
+    <ul>
+      <li><a href="../JingEn/homepage.html">HOME</a></li>
+      <li><a href="website.html">ROOMS</a></li>
+      <li><a href="../Navodita/allfacilities2.html">SEE & DO</a></li>
+      <li><a href="../Reese/Promotion/Promotion.html">PROMOTIONS</a></li>
+      <li><a href="../Teagan/restaurant_homepage.html.html">FOOD</a></li>
+      <li><a href="../Reese/ContactUs/ContactUs.html">CONTACT US</a></li>
+      <a class="icon" onclick="responsive()">
+      <i class="fa fa-bars" id="icon"></i></a>
+      <a href="1.html" id="reserve" target="_blank">RESERVE NOW</a>
+    </ul>
+  </section>
+
+  <!--MOBILE NAV BAR-->
+  <section class="mobile">
+    <ul>
+      <li><a href="../JingEn/homepage.html">HOME</a></li>
+      <li><a href="website.html">ROOMS</a></li>
+      <li><a href="../Navodita/allfacilities2.html">SEE & DO</a></li>
+      <li><a href="../Reese/Promotion/Promotion.html">PROMOTIONS</a></li>
+      <li><a href="../Teagan/restaurant_homepage.html.html">FOOD</a></li>
+      <li><a href="../Reese/ContactUs/ContactUs.html">CONTACT US</a></li>
+    </ul>
+  </section>
+</header>
+
+<body>
+
+
+<ul class="breadcrumb">
+  <li><a href="#">Home</a></li>
+  <li><a href="./website.html">Rooms</a></li>
+  <li>Deluxe Room</li>
+</ul>
+<div class="container3">
+  <form>
+      <label for="checkin">Check-in date:</label>
+      <input type="date" id="checkin" required>
+
+      <label for="checkout">Check-out date:</label>
+      <input type="date" id="checkout" required>
+
+      <button type="button" id= "Available"  onclick="checkAvailability()">Check Availability</button>
+  </form>
+
+  <div id="availabilityResult"></div>
+
+  <script src="./room checker.js"></script>
+</div>
+<div class="parent">
+  <div class="box large">
+    <div class="container">
+      <div class="mySlides">
+        <div class="numbertext">1 / 3</div>
+        <img src="./deluxe room.webp" style="width:100%">
+      </div>
+
+      <div class="mySlides">
+        <div class="numbertext">2 / 3</div>
+        <img src="./deluxe room2.webp" style="width:100%">
+      </div>
+
+      <div class="mySlides">
+        <div class="numbertext">3 / 3</div>
+        <img src="./deluxe room toilet.webp" style="width:100%">
+      </div>
+        
+        
+      <a class="prev" onclick="plusSlides(-1)">❮</a>
+      <a class="next" onclick="plusSlides(1)">❯</a>
+
+      <div class="caption-container">
+        <p id="caption"></p>
+      </div>
+
+      <div class="row">
+        <div class="column">
+          <img class="demo cursor" src="./deluxe room.webp" style="width:100%" onclick="currentSlide(1)" alt="" >
+        </div>
+        <div class="column">
+          <img class="demo cursor" src="./deluxe room2.webp" style="width:100%" onclick="currentSlide(2)" alt="">
+        </div>
+        <div class="column">
+          <img class="demo cursor" src="./deluxe room toilet.webp" style="width:100%" onclick="currentSlide(3)" alt="">
+        </div>
+      </div>
+    </div>
+    <br>
+  </div>
+  <div class="box large">
+    <div class="container2">
+      <h2 style="text-align:center; color:rgb(118, 102, 12);">Deluxe Room With Sea View</h2>
+      <p>Welcome to our Deluxe Room, where modern comfort meets timeless charm. Designed with a keen attention to detail, this well-appointed room offers a relaxing and inviting ambiance for your stay. Unwind in the plush bedding and enjoy the convenience of modern amenities, ensuring a restful night's sleep. The thoughtfully designed workspace provides a comfortable environment for business travelers, while families and leisure guests will appreciate the cozy seating area. Immerse yourself in a delightful stay, and let our attentive staff take care of your every need during your time with us.</p>
+    </div>
+  </div>
+</div>
+
+<div class="container1">
+  <div>
+    <h1 style="text-align: center; color:rgb(118, 102, 12);">
+      Amenities
+    </h1>
+    <br>
+    <dl>
+      <dt><h3>Equipment</h3></dt>
+      <hr>
+      <dd>- Air Conditioning/ heating</dd>
+      <dd>- Safe deposit box</dd>
+      <dd>- Mini fridge at your disposal</dd>
+      <dd>- Kettle (Coffee/tea making facilities)</dd>
+      <dd>- <i class="fa fa-phone" style="color: rgb(0, 0, 0);"> Telephone</i></dd>
+      <dd>- <i class="fa fa-wifi" style="color: rgb(0, 0, 0);">Wifi Access</i></dd>
+      <dd>- <i class="fa fa-television" style="color: rgb(0, 0, 0);">TV Screen</i></dd>
+      <dd>- <i class="fa fa-plug" style="color: rgb(0, 0, 0);">International Socket</i></dd>
+    </dl>
+    <dl>
+      <dt><h3>Bathroom</h3></dt>
+      <hr>
+      <dd>- Magnifying Mirror</dd>
+      <dd>- Hair Dryer</dd>
+      <dd>- Amenities (shampoo, shower gel, body lotion)</dd>
+      <dd>- Bathrobes & Slippers</dd>
+      <dd>- <i class="fa fa-shower" style="color: rgb(0, 0, 0);" > Shower</i></dd>
+      <dd>- <i class="fa fa-bath" style="color: rgb(0, 0, 0);" > Bathtub</i></dd>
+    </dl>
+  </div>
+</div>
+<br>
+<footer>
+  <h2>JARNT SUITES</h2>
+
+  <div>
+  <ul>
+      <li>Tele No.: 0000 0000</li>
+      <li>Email: JarntSuites@email.com</li>
+      <li>123456 Nowhere Rd Weeeee Blk000 #00-000</li>
+  </ul>
+  </div>
+
+  <div>
+  <ul>
+      <li>Rooms</li>
+      <li>Reservations</li>
+      <li>Facilities</li>
+      <li>Food and Beverages</li>
+  </ul>
+  </div>
+
+  <div>
+  <ul>
+      <li>Events</li>
+      <li>Promotions</li>
+  </ul>
+  </div>
+
+  <div>
+  <ul>
+      <li>Instagram</li>
+      <li>Facebook</li>
+      <li>Linkedin</li>
+      <li>Twitter</li>
+      <li>Telegram</li>
+  </ul>
+  </div>
+</footer>
+
+<script>
+let slideIndex = 1;
+showSlides(slideIndex);
+
+function plusSlides(n) {
+  showSlides(slideIndex += n);
+}
+
+function currentSlide(n) {
+  showSlides(slideIndex = n);
+}
+
+function showSlides(n) {
+  let i;
+  let slides = document.getElementsByClassName("mySlides");
+  let dots = document.getElementsByClassName("demo");
+  let captionText = document.getElementById("caption");
+  if (n > slides.length) {slideIndex = 1}
+  if (n < 1) {slideIndex = slides.length}
+  for (i = 0; i < slides.length; i++) {
+    slides[i].style.display = "none";
+  }
+  for (i = 0; i < dots.length; i++) {
+    dots[i].className = dots[i].className.replace(" active", "");
+  }
+  slides[slideIndex-1].style.display = "block";
+  dots[slideIndex-1].className += " active";
+  captionText.innerHTML = dots[slideIndex-1].alt;
+}
+var mobileNav = document.getElementsByClassName('mobile')[0];
+var bars = document.getElementById('icon');
+var adjust = 0;
+
+function responsive() {   // opens responsive nav bar
+  if (adjust == 0) {
+    mobileNav.style.animationName = 'left_slide';
+    mobileNav.style.display = 'block';
+
+    adjust = 1
+  }
+  else {
+    mobileNav.style.display = 'none';
+    adjust = 0
+  }
+}
+</script>
+    
+</body>
+</html>

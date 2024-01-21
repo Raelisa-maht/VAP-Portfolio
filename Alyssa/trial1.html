@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Jarnt Suites | Room Booking</title>
+  <meta charset="utf-8">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="icon" type="image/x-icon" href="./JS logo finalised.png">
+  <link href= "./shopping basket.css" rel="stylesheet" type="text/css">
+<head>
+    <!-- Add your head content here (e.g., title, meta tags, stylesheets) -->
+</head>
+<body>
+    <div class = "container">
+        <h1>Room Booking:</h1>
+        <div id="promo"></div>
+        <div id="subtotal"></div>
+        <div id="total"></div>
+    </div>
+    <br>
+    <div class="PrevNext">
+      <a href="./shopping basket.html">&#8249; Previous</a>
+      <a href="./end.html">Next &#8250;</a>
+    </div>
+    <script>
+        // Function to parse query parameters from the URL
+        function getQueryParams() {
+            const urlParams = new URLSearchParams(window.location.search);
+            return {
+                promo: urlParams.get('Promo'),
+                subtotal: urlParams.get('Subtotal'),
+                total: urlParams.get('Total'),
+            };
+        }
+
+        // Function to display form data on the page
+        function displayFormData() {
+            const params = getQueryParams();
+            document.getElementById("promo").textContent = "Promo: " + params.promo;
+            document.getElementById("subtotal").textContent = "Subtotal: " + params.subtotal;
+            document.getElementById("total").textContent = "Total: " + params.total;
+        }
+
+        // Call the function to display form data when the page loads
+        window.onload = displayFormData;
+    </script>
+</body>
+</html>
+
+<style>
+.PrevNext{
+font-size: 17px;
+padding-left: 40%;
+}
+.PrevNext a, .PrevNext a:visited{
+background-color:rgb(53, 145, 160);
+box-shadow: 1px 1px #006969;
+border-radius: 4px;
+color: #ffffff;
+padding: 8px;
+margin: 16px;
+text-decoration: none;
+
+}
+.PrevNext a:hover{
+background-color: #004949;
+box-shadow: 1px 1px #004949;
+}
+body {
+background-color: rgb(228, 228, 228);
+color: #000000;
+font-family: Marcellus;
+border: #000000;
+}
+.container {
+  background-color:#d8cfc4;
+  padding: 5px 20px 15px 20px;
+  border: 2px solid rgb(0, 0, 0);
+  border-radius: 3px;
+  text-align: center;
+}
+.container.div{
+    font-size: larger;
+}
+</style>

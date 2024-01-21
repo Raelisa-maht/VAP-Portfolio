@@ -1,0 +1,155 @@
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="icon" type="image/x-icon" href="./JS logo finalised.png">
+  <link href= "./shopping basket.css" rel="stylesheet" type="text/css">
+  <title>Jarnt Suites | Room Booking</title>
+</head>
+
+<body>
+  <main>
+    <form id="shoppingBasketForm" action="./trial1.html"  method="post">
+      <!-- Add hidden fields for each room selection -->
+      <input type="hidden" name="room1" value="Deluxe Room">
+      <input type="hidden" name="room2" value="Executive Room">
+      <input type="hidden" name="room3" value="Premier Room">
+      <input type="hidden" name="room4" value="Family Suite">
+      <input type="hidden" name="room5" value="Presidential Suite">
+      <div class="basket">
+        <div class="basket-module">
+          <label for="promo-code">Enter a promotional code</label>
+          <input id="promo-code" type="text" name="promo-code" maxlength="6" class="promo-code-field">
+          <button type="button" class="promo-code-cta">Apply</button>
+        </div>
+        <div class="basket-labels">
+          <ul>
+            <li class="item item-heading">Item</li>
+            <li class="price">Price</li>
+            <li class="quantity">Quantity</li>
+            <li class="subtotal">Subtotal</li>
+          </ul>
+        </div>
+        <div class="basket-product">
+          <div class="item">
+            <div class="product-image">
+              <img src="./deluxe room.webp" alt="Placholder Image 2" class="product-frame">
+            </div>
+            <div class="product-details">
+              <h1><strong><span class="item-quantity"></span> Deluxe Room</strong></h1>
+            </div>
+          </div>
+          <div class="price">399.00</div>
+          <div class="quantity">
+            <input type="number"  value="1" min="1" max="3" class="quantity-field">
+          </div>
+          <div class="subtotal">399.00</div>
+          <div class="remove">
+            <button type="button">Remove</button>
+          </div>
+        </div>
+        <div class="basket-product">
+          <div class="item">
+            <div class="product-image">
+              <img src="./executive room.jpg" alt="Placholder Image 2" class="product-frame">
+            </div>
+            <div class="product-details">
+              <h1><strong><span class="item-quantity"></span> Executive Room</strong></h1>
+            </div>
+          </div>
+          <div class="price">444.00</div>
+          <div class="quantity">
+            <input type="number"  value="1" min="1" max="3" class="quantity-field">
+          </div>
+          <div class="subtotal">444.00</div>
+          <div class="remove">
+            <button type="button">Remove</button>
+          </div>
+        </div>
+        <div class="basket-product">
+          <div class="item">
+            <div class="product-image">
+              <img src="./premier room.jpg" alt="Placholder Image 2" class="product-frame">
+            </div>
+            <div class="product-details">
+              <h1><strong><span class="item-quantity"></span> Premier Room</strong></h1>
+            </div>
+          </div>
+          <div class="price">667.00</div>
+          <div class="quantity">
+            <input type="number" value="1" min="1" max="3" class="quantity-field">
+          </div>
+          <div class="subtotal">667.00</div>
+          <div class="remove">
+            <button type="button">Remove</button>
+          </div>
+        </div>
+        <div class="basket-product">
+          <div class="item">
+            <div class="product-image">
+              <img src="./deluxe suite.jpg" alt="Placholder Image 2" class="product-frame">
+            </div>
+            <div class="product-details">
+              <h1><strong><span class="item-quantity"></span> Family Suite</strong></h1>
+            </div>
+          </div>
+          <div class="price">999.00</div>
+          <div class="quantity">
+            <input type="number" value="1" min="1" max="3" class="quantity-field">
+          </div>
+          <div class="subtotal">999.00</div>
+          <div class="remove">
+            <button type="button">Remove</button>
+          </div>
+        </div>
+        <div class="basket-product">
+          <div class="item">
+            <div class="product-image">
+              <img src="./presidential suite.jpg" alt="Placholder Image 2" class="product-frame">
+            </div>
+            <div class="product-details">
+              <h1><strong><span class="item-quantity"></span> Presidential Suite</strong></h1>
+            </div>
+          </div>
+          <div class="price">1001.00</div>
+          <div class="quantity">
+            <input type="number" value="1" min="1" max="3" class="quantity-field">
+          </div>
+          <div class="subtotal">1001.00</div>
+          <div class="remove">
+            <button type="button">Remove</button>
+          </div>
+        </div>
+        <button type="button" id="mySubmit" class="btn"  onclick="submitForm()" value="Submit">Submit</button>
+      </div>
+      <aside>
+        <div class="summary">
+          <div class="summary-total-items"><span class="total-items"></span> Items in your Bag</div>
+          <div class="summary-subtotal">
+            <div class="subtotal-title">Subtotal</div>
+            <div class="subtotal-value final-value" id="basket-subtotal"></div>
+            <div class="summary-promo hide">
+              <div class="promo-title">Promotion</div>
+              <div class="promo-value final-value" id="basket-promo"></div>
+            </div>
+          </div>
+          <div class="summary-total">
+            <div class="total-title">Total</div>
+            <div class="total-value final-value" id="basket-total"></div>
+          </div>
+
+        </div>
+      </aside>
+    </form>  
+  </main>
+  <script src="./shopping basket.js"></script>
+
+</body>
+
+</html>
+
+
+
+
