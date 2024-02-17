@@ -1,0 +1,198 @@
+@import url("https://fonts.googleapis.com/css?family=DM+Sans:400,500,700&display=swap");
+body{
+  background-color: rgb(0, 0, 0);
+}
+.navbar {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: rgba(0, 0, 0, 0.5);
+  position: fixed; /* Change this from 'sticky' to 'fixed' */
+  top: 0;
+  width: 100%; /* Make the navbar full-width */
+  z-index: 1000; /* Set a high z-index to ensure it appears above other elements */
+}
+
+.navbar ul{
+  display: flex;
+  list-style: none;
+  margin: 20px 0px;
+}
+.navbar ul li{
+  font-family:century;
+  font-size: 1.1rem;
+  font-weight: bold;
+}
+.navbar ul li a{
+  text-decoration: none;
+  color: white;
+  padding: 8px 25px;
+  transition: all .5s ease;
+}
+.navbar ul li a:hover{
+  background-color: white;
+  color: black;
+  box-shadow: 0 0 10px white;
+}
+:root {
+  --surface-color: #000000;
+  --curve: 40;
+}
+
+.intro {
+  border: 2px solid rgb(214, 214, 214);
+  padding: 8px;
+  margin-top: 10%;
+}
+.first_half h1 {
+  text-align: center;
+  text-transform: uppercase;
+  color: #4CAF50;
+}
+
+.first_half p {
+  text-indent: 50px;
+  text-align: center;
+  letter-spacing: 3px;
+  color: rgb(255, 255, 255);
+}
+
+.second_half {
+    background-color:#000000;
+    width:100%;
+}
+.second_half h3 {
+    text-align:center;
+    justify-content:center;
+    align-content:center;
+    font-size:40px;
+    color:#705446;
+    margin-bottom:5%;
+}
+.about-jarnt {
+    height:300px;
+    width:100%;
+    animation-duration:1.2s;
+}
+.about-jarnt img {
+    width:60%;
+    height:500px;
+}
+.about-text {
+    text-align:left;
+    display:inline-block;
+    font-size:15px;
+    width:350px;
+    word-wrap:break-word;
+    margin-left:90px;
+    position:relative;
+    bottom:150px;
+    color: azure;
+}
+.about-jarnt div h2 {
+    font-size:28px;
+    margin-bottom:30px;
+    font-weight:light;
+    color:rgb(118, 102, 12);
+}
+
+.about-text2 {
+    text-align:left;
+    width:350px;
+    font-size:15px;
+    word-wrap:break-word;
+    margin-left:5%;
+    position:relative;
+    top:300px;
+    color: azure;
+}
+.jarnt-more {
+    position:relative;
+    top:60px;
+    color:rgb(255, 255, 255);
+    border:2px solid black;
+    text-decoration:none;
+    padding:20px;
+}
+#portrait1 {
+  margin-top:100px;
+  width: 30%;
+  margin-left: 15%;
+}
+
+
+
+
+.about-text2 div {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 30px 10px;
+  font-family: 'DM Sans', sans-serif;
+  transition: background .4s ease-in;
+  background-color: #c394f8;
+  
+  &.blue {
+    background-color: #428aa6;
+  }
+}
+
+input[type=radio] {
+  display: none;
+}
+
+.card {
+  position: absolute;
+  left: 40%;
+  margin: auto;
+  transition: transform .4s ease;
+  cursor: pointer;
+}
+
+.container {
+  width: 100%;
+  max-width: 1000px;
+  max-height: 900px;
+  height: 150%;
+  transform-style: preserve-3d;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+  margin-left: 5%;
+}
+
+.cards {
+  width: 150%;
+  height: 80%;
+  margin-bottom: 20px;
+}
+
+.card img {
+  height: 100%;
+  border-radius: 10px;
+  display: block;
+  margin-left: auto;
+}
+
+#item-1:checked ~ .cards #song-4, #item-2:checked ~ .cards #song-1, #item-3:checked ~ .cards #song-2, #item-4:checked ~ .cards #song-3 {
+  transform: translatex(-40%) scale(.8);
+  opacity: .4;
+  z-index: 0;
+}
+
+#item-1:checked ~ .cards #song-2, #item-2:checked ~ .cards #song-3, #item-3:checked ~ .cards #song-4, #item-4:checked ~ .cards #song-1 {
+  transform: translatex(40%) scale(.8);
+  opacity: .4;
+  z-index: 0;
+}
+
+#item-1:checked ~ .cards #song-1, #item-2:checked ~ .cards #song-2, #item-3:checked ~ .cards #song-3, #item-4:checked ~ .cards #song-4{
+  transform: translatex(0) scale(1);
+  opacity: 1;
+  z-index: 1;
+  
+  img {
+    box-shadow: 0px 0px 5px 0px rgba(81, 81, 81, 0.47);
+  }
+}

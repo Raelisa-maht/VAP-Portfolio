@@ -1,0 +1,437 @@
+body{
+  background-color: rgb(0, 0, 0);
+  counter-reset: section;
+}
+.navbar {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: rgba(0, 0, 0, 0.5);
+  position: fixed; /* Change this from 'sticky' to 'fixed' */
+  top: 0;
+  width: 100%; /* Make the navbar full-width */
+  z-index: 1000; /* Set a high z-index to ensure it appears above other elements */
+}
+
+.navbar ul{
+  display: flex;
+  list-style: none;
+  margin: 20px 0px;
+}
+.navbar ul li{
+  font-family:century;
+  font-size: 1.1rem;
+  font-weight: bold;
+}
+.navbar ul li a{
+  text-decoration: none;
+  color: white;
+  padding: 8px 25px;
+  transition: all .5s ease;
+}
+.navbar ul li a:hover{
+  background-color: white;
+  color: black;
+  box-shadow: 0 0 10px white;
+}
+:root {
+  --surface-color: #000000;
+  --curve: 40;
+}
+
+.intro {
+  border: 2px solid rgb(214, 214, 214);
+  padding: 8px;
+  margin-top: 10%;
+}
+.first_half h1 {
+  text-align: center;
+  text-transform: uppercase;
+  color: #4CAF50;
+}
+.first_half h3 {
+  text-align: center;
+  text-transform: uppercase;
+  color: #babdba;
+}
+.first_half p {
+  text-indent: 50px;
+  text-align: center;
+  letter-spacing: 3px;
+  color: rgb(255, 255, 255);
+}
+.divider {
+    background: #000000;
+    display:block;
+    height:150px;
+    width:100%;
+    margin-bottom:-40px;
+    border-top:1px solid #705446;
+}
+.second_half {
+    background-color:#000000;
+    width:100%;
+}
+.second_half h3 {
+    text-align:center;
+    justify-content:center;
+    align-content:center;
+    font-size:40px;
+    color:#705446;
+    margin-bottom:5%;
+}
+.about-jarnt {
+    height:1500px;
+    width:100%;
+    animation-duration:1.2s;
+}
+.about-jarnt img {
+    width:60%;
+    height:500px;
+}
+.about-text {
+    text-align:left;
+    display:inline-block;
+    font-size:15px;
+    width:350px;
+    word-wrap:break-word;
+    margin-left:50px;
+    position:relative;
+    bottom:150px;
+    color: azure;
+}
+.about-jarnt div h2 {
+    font-size:28px;
+    margin-bottom:30px;
+    font-weight:light;
+    color:rgb(118, 102, 12);
+}
+.contact {
+    display:inline-block;
+    margin-top:40px;
+}
+.promos {
+    display:inline-block;
+    margin-top:40px;
+}
+.about-text2 {
+    text-align:left;
+    width:350px;
+    font-size:15px;
+    word-wrap:break-word;
+    margin-left:5%;
+    position:relative;
+    top:300px;
+    color: azure;
+}
+.jarnt-more {
+    position:relative;
+    top:60px;
+    color:rgb(255, 255, 255);
+    border:2px solid black;
+    text-decoration:none;
+    padding:20px;
+}
+#portrait1 {
+    margin-top:100px;
+}
+#portrait2 {
+    float:right;
+    position:relative;
+    bottom:100px;
+}
+.video{
+  border: 2px solid rgb(214, 214, 214);
+}
+.video video{
+  margin-left: 20%;
+}
+.video h2 {
+  font-size:28px;
+  margin-bottom:30px;
+  text-align: center;
+  font-weight:light;
+  color:rgb(118, 102, 12);
+}
+.btn:link,
+.btn:visited {
+ text-transform: uppercase;
+ text-decoration: none;
+ color: rgb(184, 184, 184);
+ padding: 10px 30px;
+ border: 1px solid;
+ margin-left: 43%;
+ border-radius: 1000px;
+ display: inline-block;
+ transition: all .2s;
+ position: relative;
+}
+
+.btn:hover {
+ transform: translateY(-5px);
+ box-shadow: 0 10px 20px rgb(255, 255, 255);
+}
+
+.btn:active {
+ transform: translateY(-3px);
+}
+
+.btn::after {
+ content: "";
+ display: inline-block;
+ height: 100%;
+ width: 100%;
+ border-radius: 100px;
+ top: 0;
+ left: 0;
+ position: absolute;
+ z-index: -1;
+ transition: all .3s;
+}
+
+.btn:hover::after {
+ background-color: rgb(0, 238, 255);
+ transform: scaleX(1.4) scaleY(1.5);
+ opacity: 0;
+}
+
+*,
+*::before,
+*::after {
+	box-sizing: border-box;
+}
+
+html {
+	-webkit-tap-highlight-color: transparent;
+}
+
+h1.numbered {
+	font-size: 2rem;
+	color: rgb(118, 102, 12);
+}
+
+svg {
+	max-width: 100%;
+	height: auto;
+	vertical-align: middle;
+}
+
+
+/*  FRAME  */
+	.frame {
+		border: 1em solid #fff;
+		height: 100%;
+		pointer-events: none;
+		position: fixed;
+		width: 100%;
+		z-index: 9999;
+
+		@media all and (min-width: 640px) {
+			border-width: 2em;
+		}
+	}
+
+
+/*  SECTIONS  */
+	.section {
+		min-height: 100vh;
+		color: #ffffff;
+		padding: 2em;
+	}
+
+
+/*  SPLIT VISION  */
+	.split-vision {
+		overflow: hidden;
+	}
+	.split-vision .column .content {
+		max-width: 540px;
+		padding-top: 1em;
+		padding-bottom: 1em;
+		margin-right: auto;
+		margin-left: auto;
+		position: relative;
+		z-index: 2;
+	}
+
+	@media all and (min-width: 800px) {
+		.split-vision {
+			display: flex;
+			align-items: center;
+		}
+		.split-vision .column {
+			width: 50%;
+		}
+		.split-vision .column .content {
+			padding-right: 1em;
+			padding-left: 20%;
+			margin-right: -10%;
+		}
+	}
+
+	@media all and (min-width: 960px) {
+		.split-vision .column .content {
+			margin-right: 0;
+		}
+		.split-vision.reverse .column .content {
+			margin-left: 0;
+		}
+	}
+
+
+/*  PROCESS  */
+	.process {
+		width: 100%;
+		max-width: none;
+	}
+	.process .discover,
+	.process .design,
+	.process .implement,
+	.process .develop,
+	.process .deliver {
+		opacity: 0.8;
+		transform: scaleY(0);
+		transform-origin: 50% 100%;
+		transition: opacity 0.25s;
+	}
+	.process.js-animate .discover,
+	.process.js-animate .design,
+	.process.js-animate .implement,
+	.process.js-animate .develop,
+	.process.js-animate .deliver {
+		animation: grow-up 1s forwards;
+	}
+	.process.js-animate .discover {
+		animation-delay: 0.25s;
+	}
+	.process.js-animate .design {
+		animation-delay: 0.5s;
+	}
+	.process.js-animate .implement {
+		animation-delay: 0.75s;
+	}
+	.process.js-animate .develop {
+		animation-delay: 1s;
+	}
+	.process.js-animate .deliver {
+		animation-delay: 1.25s;
+	}
+
+	@keyframes grow-up {
+		0% {
+			transform: scaleY(0);
+		}
+		50% {
+			transform: scaleY(1.1);
+		}
+		80%,
+		100% {
+			transform: scaleY(1);
+		}
+	}
+
+	.process-details {
+		max-width: 1440px;
+		padding: 2em;
+		margin-right: auto;
+		margin-left: auto;
+	}
+	.process-details .discover,
+	.process-details .design,
+	.process-details .implement,
+	.process-details .develop,
+	.process-details .deliver {
+		max-width: 480px;
+		padding: 1em 0;
+		margin-right: auto;
+		margin-left: auto;
+		transition: opacity 0.25s;
+	}
+	.process-details .discover .heading,
+	.process-details .design .heading,
+	.process-details .implement .heading,
+	.process-details .develop .heading,
+	.process-details .deliver .heading {
+		font-weight: 700;
+	}
+	.process-details .discover .heading::after,
+	.process-details .design .heading::after,
+	.process-details .implement .heading::after,
+	.process-details .develop .heading::after,
+	.process-details .deliver .heading::after {
+		width: 40px;
+		height: 4px;
+		margin-top: 0.25em;
+		display: block;
+		content: '';
+	}
+	.process-details .discover .heading::after {
+		background: #50b1aa;
+	}
+	.process-details .design .heading::after {
+		background: #f57a73;
+	}
+	.process-details .implement .heading::after {
+		background: #ffb566;
+	}
+	.process-details .develop .heading::after {
+		background: #43c0e6;
+	}
+	.process-details .deliver .heading::after {
+		background: #60666a;
+	}
+
+	@media all and (min-width: 800px) {
+		.process-details {
+			display: flex;
+			flex-wrap: wrap;
+			justify-content: center;
+		}
+		.process-details .discover,
+		.process-details .design,
+		.process-details .implement,
+		.process-details .develop,
+		.process-details .deliver {
+			width: 50%;
+			padding-right: 1em;
+			padding-left: 1em;
+		}
+
+		.process-details .discover {
+			order: 1;
+		}
+		.process-details .design {
+			margin-right: 0;
+			order: 4;
+		}
+		.process-details .implement {
+			order: 2;
+		}
+		.process-details .develop {
+			margin-left: 0;
+			order: 5;
+		}
+		.process-details .deliver {
+			order: 3;
+		}
+	}
+	@media all and (min-width: 800px) {
+		.process-details .discover,
+		.process-details .design,
+		.process-details .implement,
+		.process-details .develop,
+		.process-details .deliver {
+			width: 33.3334%;
+		}
+	}
+	@media all and (min-width: 1280px) {
+		.process-details .discover,
+		.process-details .design,
+		.process-details .implement,
+		.process-details .develop,
+		.process-details .deliver {
+			padding-right: 2em;
+			padding-left: 2em;
+		}
+	}
+
